@@ -50,7 +50,7 @@ class MakeBackup():
 
         for f in glob.glob('*.zip'):
             created_date = datetime.datetime.fromtimestamp(os.stat(f).st_mtime).date()
-            if created_date <= limit_date:    
+            if created_date < limit_date:    
                 os.remove(os.path.realpath(f))
                 print(f'bak {f} eliminado del respaldo')
 
